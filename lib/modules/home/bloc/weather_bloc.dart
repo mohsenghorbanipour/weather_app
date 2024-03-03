@@ -38,7 +38,7 @@ class WeatherBloc extends ChangeNotifier {
           LocationPermission permission = await Geolocator.requestPermission();
           if (permission == LocationPermission.denied ||
               permission == LocationPermission.deniedForever) {
-            AppSettings.openAppSettings(type: AppSettingsType.location);
+            AppSettings.openAppSettings();
           } else {
             return await Geolocator.getCurrentPosition();
           }
