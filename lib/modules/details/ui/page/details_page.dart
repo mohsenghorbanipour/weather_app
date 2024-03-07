@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/modules/home/data/models/weather_response.dart';
+import 'package:weather_app/modules/weather/data/models/weather_response.dart';
 
 class DetailsPage extends StatelessWidget {
   const DetailsPage({
@@ -11,9 +11,7 @@ class DetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          
-        ),
+        appBar: AppBar(),
         body: SizedBox(
           width: double.infinity,
           child: Column(

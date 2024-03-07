@@ -1,16 +1,15 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:weather_app/core/base/base_model.dart';
-import 'package:weather_app/modules/home/data/models/clouds.dart';
-import 'package:weather_app/modules/home/data/models/main_data.dart';
-import 'package:weather_app/modules/home/data/models/sys.dart';
-import 'package:weather_app/modules/home/data/models/weather.dart';
-import 'package:weather_app/modules/home/data/models/wind.dart';
+import 'package:weather_app/modules/weather/data/models/clouds.dart';
+import 'package:weather_app/modules/weather/data/models/main_data.dart';
+import 'package:weather_app/modules/weather/data/models/sys.dart';
+import 'package:weather_app/modules/weather/data/models/weather.dart';
+import 'package:weather_app/modules/weather/data/models/wind.dart';
 
 part 'weather_response.g.dart';
 
 @JsonSerializable(includeIfNull: false, explicitToJson: true)
 class WeatherResponse implements BaseModel<WeatherResponse> {
-
   WeatherResponse({
     this.weather,
     this.main,
@@ -30,6 +29,7 @@ class WeatherResponse implements BaseModel<WeatherResponse> {
   final String? name;
 
   @override
-  factory WeatherResponse.fromJson(Map<String, dynamic> json) => _$WeatherResponseFromJson(json);
+  factory WeatherResponse.fromJson(Map<String, dynamic> json) =>
+      _$WeatherResponseFromJson(json);
   Map<String, dynamic> toJson() => _$WeatherResponseToJson(this);
 }

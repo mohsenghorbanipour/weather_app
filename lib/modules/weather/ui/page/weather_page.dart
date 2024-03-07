@@ -5,8 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:weather_app/core/components/shimmer_component.dart';
 import 'package:weather_app/core/resources/assets/assets.dart';
 import 'package:weather_app/core/router/routes.dart';
-import 'package:weather_app/modules/home/bloc/weather_bloc.dart';
-import 'package:weather_app/modules/home/ui/widgets/theme_switch_widget.dart';
+import 'package:weather_app/modules/weather/bloc/weather_bloc.dart';
+import 'package:weather_app/modules/weather/ui/widgets/theme_switch_widget.dart';
 
 class WeatherPage extends StatelessWidget {
   const WeatherPage({super.key});

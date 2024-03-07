@@ -2,8 +2,8 @@ import 'package:app_settings/app_settings.dart';
 import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:weather_app/core/utils/logger_helper.dart';
-import 'package:weather_app/modules/home/data/models/weather_response.dart';
-import 'package:weather_app/modules/home/data/remote/weather_remote_provider.dart';
+import 'package:weather_app/modules/weather/data/models/weather_response.dart';
+import 'package:weather_app/modules/weather/data/remote/weather_remote_provider.dart';
 
 class WeatherBloc extends ChangeNotifier {
   bool loading = true;

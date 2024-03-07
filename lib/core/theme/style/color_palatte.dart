@@ -4,6 +4,11 @@ class ColorPalette {
   final Color primary;
   final Color scaffoldBackground;
   final Color textPrimary;
+  final Color white = Colors.white;
+  final Color success = const Color(0xff1FA14F);
+  final Color info = const Color(0xffF1AF05);
+  final Color red = const Color(0xffEB464A);
+  final Color silver = const Color(0xffF2F2F2);
 
   const ColorPalette({
     required this.primary,

@@ -4,6 +4,7 @@ import 'package:lottie/lottie.dart';
 import 'package:weather_app/core/resources/assets/assets.dart';
 import 'package:weather_app/core/router/routes.dart';
 import 'package:weather_app/core/utils/logger_helper.dart';
+import 'package:weather_app/modules/auth/bloc/auth_bloc.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -21,12 +22,23 @@ class _SplashPageState extends State<SplashPage> {
 
   Future<void> _initData() async {
     try {
-      await Future.delayed(
-        const Duration(seconds: 2),
+      AuthBloc().init().then(
+        (_) async {
+          AuthBloc().isAuthenticated().then(
+            (isAuthenticated) async {
+              if (isAuthenticated) {
+                context.goNamed(
+                  Routes.weather,
+                );
+              } else {
+                context.goNamed(
+                  Routes.login,
+                );
+              }
+            },
+          );
+        },
       );
-      if (context.mounted) {
-        context.goNamed(Routes.weather);
-      }
     } catch (e, s) {
       LoggerHelper.errorLog(e, s);
     }

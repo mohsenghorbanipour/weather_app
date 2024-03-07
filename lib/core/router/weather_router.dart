@@ -3,9 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
 import 'package:weather_app/core/router/routes.dart';
+import 'package:weather_app/modules/auth/ui/page/login_page.dart';
+import 'package:weather_app/modules/auth/ui/page/otp_page.dart';
 import 'package:weather_app/modules/details/ui/page/details_page.dart';
-import 'package:weather_app/modules/home/data/models/weather_response.dart';
-import 'package:weather_app/modules/home/ui/page/weather_page.dart';
+import 'package:weather_app/modules/weather/data/models/weather_response.dart';
+import 'package:weather_app/modules/weather/ui/page/weather_page.dart';
 import 'package:weather_app/modules/splash/ui/page/splash_page.dart';
 
 class WeatherRouter {
@@ -21,6 +23,18 @@ class WeatherRouter {
         path: Routes.splash,
         name: Routes.splash,
         pageBuilder: (state) => const SplashPage(),
+      ),
+      _routeFade(
+        path: Routes.login,
+        name: Routes.login,
+        pageBuilder: (state) => LoginPage(),
+        routes: [
+          _routeFade(
+            path: Routes.otp,
+            name: Routes.otp,
+            pageBuilder: (state) => OtpPage(),
+          ),
+        ],
       ),
       _routeFade(
         path: Routes.weather,

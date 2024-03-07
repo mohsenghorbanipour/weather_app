@@ -34,6 +34,23 @@ class WeatherTheme {
     cardColor: ColorPalette.light.scaffoldBackground,
     splashColor: Colors.transparent,
     highlightColor: Colors.transparent,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(ColorPalette.light.primary),
+        foregroundColor: MaterialStateProperty.all(Colors.white),
+        elevation: MaterialStateProperty.all(0),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        ),
+        textStyle: MaterialStateProperty.all(
+          TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w700,
+            color: ColorPalette.light.white,
+          ),
+        ),
+      ),
+    ),
     textTheme: TextTheme(
       labelSmall: Typography.englishLike2021.labelSmall?.copyWith(
         height: 1.5,
@@ -154,12 +171,18 @@ class WeatherTheme {
     highlightColor: Colors.transparent,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(ColorPalette.dark.primary),
-        foregroundColor:
-            MaterialStateProperty.all(ColorPalette.dark.textPrimary),
+        backgroundColor: MaterialStateProperty.all(ColorPalette.light.primary),
+        foregroundColor: MaterialStateProperty.all(Colors.white),
         elevation: MaterialStateProperty.all(0),
         shape: MaterialStateProperty.all(
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        ),
+        textStyle: MaterialStateProperty.all(
+          TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w700,
+            color: ColorPalette.light.white,
+          ),
         ),
       ),
     ),
